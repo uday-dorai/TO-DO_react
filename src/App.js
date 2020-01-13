@@ -16,16 +16,18 @@ class App extends Component {
     const newTodo ={
       id:uuid.v4(),
       title:title,
-      completed:false
+      status:false
     }
     this.setState({todos:[...this.state.todos, newTodo]})
   }
 
   // checkbox
-  markComplete = (id)=>{
+  markStatus = (id)=>{
+    console.log(id);
     this.setState({todos: this.state.todos.map(todo =>{
-      if(todo.uuid == id){
-        todo.completed = !todo.completed
+      if(todo.uuid === id){
+        console.log(todo.uuid);
+        todo.status = !todo.status
       }
       return todo
     })
@@ -49,7 +51,7 @@ class App extends Component {
         <HeaderTag />
         <AddTodoList addTodo={this.addTodo}/>
         <ul className='list'>
-          <Todo todos={this.state.todos} markComplete={this.markComplete} dltTodo ={this.dltTodo}/>
+          <Todo todos={this.state.todos} markComplete={this.markStatus} dltTodo ={this.dltTodo}/>
         </ul>
       </div>
     );
