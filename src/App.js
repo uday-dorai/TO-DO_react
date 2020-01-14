@@ -12,16 +12,17 @@ class App extends Component {
     todos:[]
   }
 
+  // Add new Todo list
   addTodo =(title) =>{
     const newTodo ={
       id:uuid.v4(),
       title:title,
       status:false
     }
-    this.setState({todos:[...this.state.todos, newTodo]})
+    this.setState({todos:[newTodo, ...this.state.todos]})
   }
 
-  // checkbox
+  // Checkbox check-uncheck
   markStatus = (id)=>{
     // console.log(111)
     this.setState({todos: this.state.todos.map(todo =>{
@@ -35,25 +36,29 @@ class App extends Component {
       }
       return todo
     })
-  })
+    })
   }
 
 
-  // delete the todo item
+  // delete a todo item
   dltTodo = (id)=>{
     // console.log(id);
-      this.setState({todos:[...this.state.todos.filter(todo =>
-        todo.id !== id
-        )
-      ]
+      this.setState({todos:this.state.todos.filter(todo =>{
+        if(todo.id !== id){
+          return todo
+        }
+      })
     })
   }
 
   render(){
     return (
       <div className='App'>
+        {/*  For header tag  */}
         <HeaderTag />
-        <AddTodoList addTodo={this.addTodo}/>
+        { /*For input form and submit button */}
+        <AddTodoList addTodo={this.addTodo}/> 
+        {/*  For the list of todos */}
         <ul className='list'>
           <Todo todos={this.state.todos} 
           markComplete={this.markStatus} 
