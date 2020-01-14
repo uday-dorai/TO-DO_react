@@ -23,11 +23,15 @@ class App extends Component {
 
   // checkbox
   markStatus = (id)=>{
-    console.log(id);
+    // console.log(111)
     this.setState({todos: this.state.todos.map(todo =>{
-      if(todo.uuid === id){
-        console.log(todo.uuid);
+      // console.log(222)
+      // console.log(id)
+      // console.log(todo.id)
+      if(todo.id === id){
+        console.log(111)
         todo.status = !todo.status
+        console.log(todo.status)
       }
       return todo
     })
@@ -51,7 +55,9 @@ class App extends Component {
         <HeaderTag />
         <AddTodoList addTodo={this.addTodo}/>
         <ul className='list'>
-          <Todo todos={this.state.todos} markComplete={this.markStatus} dltTodo ={this.dltTodo}/>
+          <Todo todos={this.state.todos} 
+          markComplete={this.markStatus} 
+          dltTodo ={this.dltTodo}/>
         </ul>
       </div>
     );
