@@ -9,7 +9,7 @@ class todoItems extends Component {
             return {
                 textDecoration:'line-through',
                 color:'white',
-                backgroundColor:'#f4f4f4'
+                backgroundColor:'orange'
             }
         }
     }

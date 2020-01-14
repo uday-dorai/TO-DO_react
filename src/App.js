@@ -59,6 +59,7 @@ class App extends Component {
         { /*For input form and submit button */}
         <AddTodoList addTodo={this.addTodo}/> 
         {/*  For the list of todos */}
+        <h2> All list</h2>
         <ul className='list'>
           <Todo todos={this.state.todos} 
           markComplete={this.markStatus} 

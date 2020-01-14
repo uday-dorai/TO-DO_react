@@ -22,12 +22,12 @@ class addTodoList extends Component{
             <form onSubmit={this.onSubmit} className='formDiv'>
                 <input type='text' 
                 className='inputTag' 
-                placeholder ='ENTER LIST' 
+                placeholder ='Add Todo' 
                 name="title"
                 value={this.state.title}
                 onChange ={this.onChange}
                 />
-                <button className='submitBtn' >submit</button>
+                <button className='submitBtn' >Submit</button>
             </form>
         );
     }
