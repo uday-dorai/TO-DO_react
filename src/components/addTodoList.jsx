@@ -1,31 +1,15 @@
 import React, { Component } from 'react';
 
 class addTodoList extends Component{
-    state ={
-        title:''
-    }
-
-    onChange=(e) => this.setState({[e.target.name]:e.target.value})
-
-    onSubmit =(e)=>{
-        e.preventDefault();
-        // console.log(this.state.title);
-        if(this.state.title !== ''){
-            this.props.addTodo(this.state.title);
-            this.setState({title:''});
-        }
-        
-    }
-
     render(){
         return (
-            <form onSubmit={this.onSubmit} className='formDiv'>
+            <form onSubmit={this.props.onSubmit} className='formDiv'>
                 <input type='text' 
                 className='inputTag' 
                 placeholder ='Add Todo' 
                 name="title"
-                value={this.state.title}
-                onChange ={this.onChange}
+                value={this.props.title}
+                onChange ={this.props.onChange}
                 />
                 <button className='submitBtn' >Submit</button>
             </form>

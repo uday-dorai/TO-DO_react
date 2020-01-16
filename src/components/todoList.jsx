@@ -6,7 +6,7 @@ class todoList extends Component {
 
     render() {
         return this.props.todos.map((todo) =>(
-            <TodoItem key={todo.id} todo={todo} markComplete={this.props.markComplete}
+            <TodoItem key={todo.id} todo={todo} markStatus={this.props.markStatus}
             dltTodo = {this.props.dltTodo}/>
             
         ));
